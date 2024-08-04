@@ -25,17 +25,15 @@ export default function Rating() {
         <div className="interaction-bg">
           <img src={favouriteIcon} alt="favourite icon" />
         </div>
-        <label htmlFor="">
-          <h1>How did we do?</h1>
-        </label>
-        <p className="text-muted">
+        <h2>How did we do?</h2>
+        <p className="text-muted" id="form-instructions">
           Please let us know how we did with your support request. All feedback
           is appreciated to help us improve our offering!
         </p>
         <fieldset
           className="rating-container"
           id="rating-container"
-          aria-description="Please give a rating from 1- 5"
+          aria-description="form-instructions"
         >
           <label
             className={`interaction-bg text-muted ${rating == 1 && "active"}`}
