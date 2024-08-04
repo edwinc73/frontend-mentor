@@ -5,7 +5,8 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      <main>
+      <main className="">
+        <div id="bg-image" className="w-100"></div>
         <section id="faq-section">
           <Faq></Faq>
         </section>
