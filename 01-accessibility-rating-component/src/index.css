@@ -1,68 +1,90 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --bg-blue: hsl(228, 11%, 9%);
+  --container-bg: hsl(215, 25%, 13%);
+  --interaction-bg: hsl(213, 19%, 18%);
+  --selected: hsl(25, 97%, 53%);
+  --text-dark: #1a1a1a;
+  --text-white: white;
+  --text-muted: hsl(217, 12%, 63%);
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-color: #141519;
+  font-family: "Overpass", sans-serif;
+  color: var(--text-white);
+  height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.text-dark {
+  color: var(--text-dark);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.selected {
+  color: var(--text-dark);
+  background-color: var(--selected);
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 320px;
+  text-align: left;
+  padding: 30px;
+  background-color: var(--container-bg);
+  border-radius: 30px;
+}
+
+.interaction-bg {
+  background-color: var(--interaction-bg);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  width: 100%;
+  border-radius: 300px;
+  padding: 10px 0;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.rating-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+.rating-container .interaction-bg {
+  cursor: pointer;
+  transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.rating-container .interaction-bg:hover {
+  background-color: var(--selected);
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.active {
+  background-color: white;
+  color: var(--text-dark);
+  font-weight: 700;
 }
