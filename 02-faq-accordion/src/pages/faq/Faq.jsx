@@ -40,13 +40,13 @@ export default function Faq() {
         </div>
         <div id="faq-items" className="mt-2">
           {config.faq.map((item) => (
-            <article key={item.id}>
+            <div key={item.id}>
               <FaqItem
                 {...item}
                 open={open == item.id}
                 handleClick={handleClick}
               ></FaqItem>
-            </article>
+            </div>
           ))}
         </div>
       </>
