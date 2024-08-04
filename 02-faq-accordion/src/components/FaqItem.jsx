@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function FaqItem({ id, question, answer, open, handleClick }) {
   return (
     <div className="faq-item mt-4 d-flex flex-column align-items-center">
-      <div aria-expanded={open} className="p-0 w-100 d-flex align-items-center">
+      <div className="p-0 w-100 d-flex align-items-center">
         <div
           className="question text-dark-purple fw-bold col-10 p-0"
           id={`question-${id}`}
@@ -14,6 +14,7 @@ export default function FaqItem({ id, question, answer, open, handleClick }) {
           {question}
         </div>
         <button
+          aria-expanded={open}
           onClick={handleClick}
           aria-controls={`answer-${id}`}
           className="icon-container d-flex justify-content-end align-items-center col-2 p-0"
