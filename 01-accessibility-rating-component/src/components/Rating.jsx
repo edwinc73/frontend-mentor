@@ -6,12 +6,12 @@ export default function Rating() {
   const [submitted, setSubmitted] = useState(false);
   const [showError, setShowError] = useState(false);
   const handleClick = (e) => {
-    console.log(e.target);
     setShowError(false);
     setRating(e.target.value);
   };
 
-  const submit = () => {
+  const submit = (e) => {
+    e.preventDefault();
     if (rating == null) {
       setShowError(true);
       return;
@@ -21,7 +21,7 @@ export default function Rating() {
 
   const Rating = () => {
     return (
-      <form id="rating">
+      <form id="rating" onSubmit={submit}>
         <div className="interaction-bg">
           <img src={favouriteIcon} alt="favourite icon" />
         </div>
@@ -113,9 +113,7 @@ export default function Rating() {
           </small>
         )}
 
-        <button onClick={submit} tabIndex={6}>
-          SUBMIT
-        </button>
+        <button>SUBMIT</button>
       </form>
     );
   };
