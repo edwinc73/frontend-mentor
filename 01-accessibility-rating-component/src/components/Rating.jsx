@@ -21,7 +21,7 @@ export default function Rating() {
     return (
       <div id="rating">
         <div className="interaction-bg">
-          <img src="/src/assets/images/icon-star.svg" alt="favourite icon" />
+          <img src="/src/images/icon-star.svg" alt="favourite icon" />
         </div>
         <h1>How did we do?</h1>
         <p className="text-muted">
@@ -100,7 +100,7 @@ export default function Rating() {
     return (
       <article>
         <img
-          src="/src/assets/images/illustration-thank-you.svg"
+          src="/src/images/illustration-thank-you.svg"
           alt="successful feedback submission, thank you"
         />
         <p className="rating-pill ">You selected {rating} out of 5</p>
