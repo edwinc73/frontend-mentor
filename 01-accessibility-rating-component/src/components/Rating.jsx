@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import favouriteIcon from "../images/icon-star.svg";
+import thankYouImage from "../images/illustration-thank-you.svg";
 export default function Rating() {
   const [rating, setRating] = useState(null);
   const [submitted, setSubmitted] = useState(false);
@@ -21,7 +22,7 @@ export default function Rating() {
     return (
       <div id="rating">
         <div className="interaction-bg">
-          <img src="/src/images/icon-star.svg" alt="favourite icon" />
+          <img src={favouriteIcon} alt="favourite icon" />
         </div>
         <h1>How did we do?</h1>
         <p className="text-muted">
@@ -100,7 +101,7 @@ export default function Rating() {
     return (
       <article>
         <img
-          src="/src/images/illustration-thank-you.svg"
+          src={thankYouImage}
           alt="successful feedback submission, thank you"
         />
         <p className="rating-pill ">You selected {rating} out of 5</p>
