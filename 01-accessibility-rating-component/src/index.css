@@ -7,6 +7,7 @@
   --text-white: white;
   --text-muted: hsl(217, 12%, 63%);
 }
+
 body {
   padding: 0;
   margin: 0;
@@ -181,4 +182,19 @@ fieldset {
   padding: 8px 30px;
   text-align: center;
   width: fit-content;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  .container {
+    width: 250px;
+  }
+
+  .interaction-bg {
+    width: 38px;
+    height: 38px;
+  }
 }
