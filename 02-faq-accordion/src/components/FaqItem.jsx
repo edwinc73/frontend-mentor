@@ -1,43 +1,40 @@
 import PropTypes from "prop-types";
 import plusIcon from "../../src/assets/images/icon-plus.svg";
 import minusIcon from "../../src/assets/images/icon-minus.svg";
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function FaqItem({ id, question, answer }) {
-  const [open, setOpen] = useState(false);
-
-  const handleClick = () => {
-    setOpen((prev) => !prev);
-  };
+export default function FaqItem({ id, question, answer, open, handleClick }) {
   return (
     <div className="faq-item mt-4 d-flex flex-column align-items-center">
-      <button
-        aria-controls={`answer-${id}`}
-        aria-expanded={open}
-        className="p-0 w-100 d-flex align-items-center"
-        onClick={handleClick}
-      >
+      <div aria-expanded={open} className="p-0 w-100 d-flex align-items-center">
         <div
           className="question text-dark-purple fw-bold col-10 p-0"
           id={`question-${id}`}
         >
           {question}
         </div>
-        <div className="icon-container d-flex justify-content-end align-items-center col-2 p-0">
+        <button
+          onClick={handleClick}
+          aria-controls={`answer-${id}`}
+          className="icon-container d-flex justify-content-end align-items-center col-2 p-0"
+          data-value={id}
+        >
           <img
             className="question-icon "
             src={open ? minusIcon : plusIcon}
             alt={open ? "collapse question icon" : "expand question icon"}
+            data-value={id}
           />
-        </div>
-      </button>
+        </button>
+      </div>
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, transform: "translateY(20px)" }}
+            layout
+            initial={{ opacity: 0, transform: "translateY(10px)" }}
             animate={{ opacity: 1, transform: "translateY(0px)" }}
-            exit={{ opacity: 0, transform: "translateY(-20px)" }}
+            exit={{ opacity: 0, transform: "translateY(10px)" }}
+            transition={{ duration: 0.2 }}
           >
             <div
               aria-labelledby={`question-${id}`}

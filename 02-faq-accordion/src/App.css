@@ -96,3 +96,18 @@ p {
     background-image: url(./assets/images/background-pattern-mobile.svg);
   }
 }
+
+.animate {
+  animation: fade-in 1s;
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
