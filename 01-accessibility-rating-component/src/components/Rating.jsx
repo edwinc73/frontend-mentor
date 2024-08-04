@@ -6,8 +6,9 @@ export default function Rating() {
   const [submitted, setSubmitted] = useState(false);
   const [showError, setShowError] = useState(false);
   const handleClick = (e) => {
+    console.log(e.target);
     setShowError(false);
-    setRating(e.target.dataset.value);
+    setRating(e.target.value);
   };
 
   const submit = () => {
@@ -20,66 +21,88 @@ export default function Rating() {
 
   const Rating = () => {
     return (
-      <div id="rating">
+      <form id="rating">
         <div className="interaction-bg">
           <img src={favouriteIcon} alt="favourite icon" />
         </div>
-        <h1>How did we do?</h1>
+        <label htmlFor="">
+          <h1>How did we do?</h1>
+        </label>
         <p className="text-muted">
           Please let us know how we did with your support request. All feedback
           is appreciated to help us improve our offering!
         </p>
-        <span
+        <fieldset
           className="rating-container"
           id="rating-container"
           aria-description="Please give a rating from 1- 5"
         >
-          <div
-            onClick={handleClick}
-            id="1"
-            data-value="1"
+          <label
             className={`interaction-bg text-muted ${rating == 1 && "active"}`}
-            tabIndex={1}
+            htmlFor="1"
           >
+            <input
+              type="radio"
+              name="1"
+              id="1"
+              value={1}
+              onChange={handleClick}
+            />
             1
-          </div>
-          <div
-            onClick={handleClick}
-            id="2"
-            data-value="2"
+          </label>
+          <label
             className={`interaction-bg text-muted ${rating == 2 && "active"}`}
-            tabIndex={2}
+            htmlFor="2"
           >
+            <input
+              type="radio"
+              name="2"
+              id="2"
+              value={2}
+              onChange={handleClick}
+            />
             2
-          </div>
-          <div
-            onClick={handleClick}
-            id="3"
-            data-value="3"
+          </label>
+          <label
             className={`interaction-bg text-muted ${rating == 3 && "active"}`}
-            tabIndex={3}
+            htmlFor="3"
           >
+            <input
+              type="radio"
+              name="3"
+              id="3"
+              value={3}
+              onChange={handleClick}
+            />
             3
-          </div>
-          <div
-            onClick={handleClick}
-            id="4"
-            data-value="4"
+          </label>
+          <label
             className={`interaction-bg text-muted ${rating == 4 && "active"}`}
-            tabIndex={4}
+            htmlFor="4"
           >
+            <input
+              type="radio"
+              name="4"
+              id="4"
+              value={4}
+              onChange={handleClick}
+            />
             4
-          </div>
-          <div
-            onClick={handleClick}
-            id="5"
-            data-value="5"
+          </label>
+          <label
             className={`interaction-bg text-muted ${rating == 5 && "active"}`}
-            tabIndex={5}
+            htmlFor="5"
           >
+            <input
+              type="radio"
+              name="5"
+              id="5"
+              value={5}
+              onChange={handleClick}
+            />
             5
-          </div>
-        </span>
+          </label>
+        </fieldset>
         {showError && (
           <small
             className="text-warning"
@@ -93,13 +116,13 @@ export default function Rating() {
         <button onClick={submit} tabIndex={6}>
           SUBMIT
         </button>
-      </div>
+      </form>
     );
   };
 
   const ThankYou = () => {
     return (
-      <article>
+      <div className="flex-container">
         <img
           src={thankYouImage}
           alt="successful feedback submission, thank you"
@@ -112,24 +135,15 @@ export default function Rating() {
             more support, don’t hesitate to get in touch!
           </p>
         </div>
-      </article>
+      </div>
     );
   };
 
   return (
     <>
-      <div className="container">{submitted ? <ThankYou /> : <Rating />}</div>
-      <div className="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-          Frontend Mentor
-        </a>
-        . Coded by
-        <a href="https://github.com/edwinc73" target="_blank">
-          Edwin Cheng
-        </a>
-        .
-      </div>
+      <article className="container">
+        {submitted ? <ThankYou /> : <Rating />}
+      </article>
     </>
   );
 }
