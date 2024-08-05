@@ -40,7 +40,7 @@ export default function Faq() {
         </div>
         <div id="faq-items" className="mt-2">
           {config.faq.map((item) => (
-            <div key={item.id}>
+            <div className="faq-item" key={item.id}>
               <FaqItem
                 {...item}
                 open={open == item.id}
