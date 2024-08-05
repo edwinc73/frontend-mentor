@@ -206,4 +206,14 @@ fieldset {
     width: 38px;
     height: 38px;
   }
+
+  input[type="radio"]:after {
+    top: -6px;
+    left: -8px;
+  }
+
+  input[type="radio"]:checked:after {
+    top: -6px;
+    left: -8px;
+  }
 }
