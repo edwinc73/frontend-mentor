@@ -22,6 +22,7 @@ body {
 
 * {
   font-family: karla;
+  box-sizing: border-box;
 }
 
 .text-grey1 {
@@ -42,4 +43,14 @@ body {
 
 body {
   background-color: var(--green1);
+}
+
+.bg-green {
+  background-color: var(--green2);
+}
+
+label.form-label:after,
+.agree .form-check-label:after {
+  content: " *";
+  color: var(--green2);
 }
