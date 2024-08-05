@@ -1,11 +1,6 @@
 @font-face {
-  font-family: work-sans;
+  font-family: workSans;
   src: url(./assets/fonts/WorkSans-VariableFont_wght.ttf);
-}
-
-@font-face {
-  font-family: work-sans-italics;
-  src: url(./assets/fonts/WorkSans-Italic-VariableFont_wght.ttf);
 }
 
 :root {
@@ -29,9 +24,10 @@ main {
   position: relative;
 }
 
-body {
-  font-family: work-sans;
+* {
+  font-family: workSans;
 }
+
 #faq-section {
   margin-top: -100px;
   z-index: 2;
@@ -55,7 +51,8 @@ body {
 }
 
 p {
-  letter-spacing: 0.03rem;
+  font-size: 15px;
+  letter-spacing: 0.01rem;
   line-height: 1.6;
 }
 
