@@ -1,0 +1,45 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+}
+
+:root {
+  --green1: hsl(148, 38%, 91%);
+  --green2: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+  --grey1: hsl(186, 15%, 59%);
+  --grey2: hsl(187, 24%, 22%);
+}
+
+@font-face {
+  font-family: karla;
+  src: url(./assets/fonts/Karla-VariableFont_wght.ttf);
+}
+
+* {
+  font-family: karla;
+}
+
+.text-grey1 {
+  color: var(--grey1);
+}
+
+.text-grey2 {
+  color: var(--grey2);
+}
+
+.text-error {
+  color: var(--red);
+}
+
+.text-green {
+  color: var(--green2);
+}
+
+body {
+  background-color: var(--green1);
+}
