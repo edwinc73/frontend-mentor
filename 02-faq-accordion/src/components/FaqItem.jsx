@@ -8,19 +8,14 @@ export default function FaqItem({ id, question, answer, open, handleClick }) {
     <AnimatePresence>
       <div className=" mt-4 d-flex flex-column align-items-center">
         <div className="p-0 w-100 d-flex align-items-center">
-          <div
-            className="question text-dark-purple fw-bold col-10 p-0"
-            id={`question-${id}`}
-          >
-            {question}
-          </div>
           <button
             aria-expanded={open}
             onClick={handleClick}
             aria-controls={`answer-${id}`}
-            className="icon-container d-flex justify-content-end align-items-center col-2 p-0"
+            className="icon-container text-dark-purple fw-bold d-flex justify-content-between align-items-center col-12 p-0"
             data-value={id}
           >
+            {question}
             <img
               className="question-icon "
               src={open ? minusIcon : plusIcon}
