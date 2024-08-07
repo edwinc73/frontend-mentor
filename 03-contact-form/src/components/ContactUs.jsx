@@ -174,6 +174,7 @@ export default function ContactUs({ setSent }) {
           id="message"
           className="form-control mt-2"
           rows={3}
+          style={{ resize: "none" }}
         ></textarea>
         {formik.errors.message && formik.touched.message ? (
           <div role="alert" className="text-error mt-2">

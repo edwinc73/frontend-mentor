@@ -86,8 +86,10 @@ main {
 }
 
 input:hover,
-label:hover {
+label:hover,
+textarea:hover {
   border-color: var(--green2) !important;
+  cursor: pointer;
 }
 
 .bordered {
