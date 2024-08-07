@@ -40,13 +40,15 @@ export default function ContactUs({ setSent }) {
 
   return (
     <form
-      className=" bg-white col-md-7 col-12 col-lg-6 mx-auto p-4 "
+      className=" bg-white col-md-5 col-12 col-lg-7 mx-auto p-4 p-lg-5"
       onSubmit={handleSubmit}
       style={{
         borderRadius: "12px",
       }}
     >
-      <h2 className="fw-bold ">Contact Us</h2>
+      <h2 className="fw-bold text-grey2" style={{ fontSize: "2.5rem" }}>
+        Contact Us
+      </h2>
       <div className="row">
         <div className="col-12 col-lg-6 mt-3">
           <label className="required" htmlFor="firstName">
@@ -117,8 +119,8 @@ export default function ContactUs({ setSent }) {
               className={`form-check-label ${
                 formik.values.type == "General Enquiry"
                   ? "selected-label"
-                  : "border"
-              } rounded col-12 py-2 px-2 mt-2`}
+                  : "bordered"
+              } rounded col-12 py-2 px-2 mt-2 text-grey2`}
             >
               <input
                 onChange={formik.handleChange}
@@ -137,8 +139,8 @@ export default function ContactUs({ setSent }) {
               className={`form-check ${
                 formik.values.type == "Support Request"
                   ? "selected-label"
-                  : "border"
-              } rounded col-12 p-0 mt-3 mt-lg-2`}
+                  : "bordered"
+              } rounded col-12 p-0 mt-3 mt-lg-2 text-grey2`}
             >
               <label htmlFor="type2" className="form-check-label py-2 px-2">
                 <input

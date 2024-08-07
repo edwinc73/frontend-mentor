@@ -61,6 +61,10 @@ body {
   background-color: var(--green2);
 }
 
+.required {
+  color: var(--grey2);
+}
+
 .required:after {
   content: " *";
   color: var(--green2);
@@ -84,6 +88,15 @@ main {
 input:hover,
 label:hover {
   border-color: var(--green2) !important;
+}
+
+.bordered {
+  border: 1px solid var(--grey2);
+}
+
+input,
+textarea {
+  border-color: var(--grey2) !important;
 }
 
 input[type="text"]:focus,
