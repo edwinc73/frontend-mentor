@@ -69,7 +69,7 @@ body {
 main {
   position: relative;
 }
-small .notification {
+.notification {
   position: absolute;
   top: 60px;
   align-self: center;
@@ -81,10 +81,70 @@ small .notification {
   border: none;
 }
 
-input:hover {
-  border-color: var(--green2);
+input:hover,
+label:hover {
+  border-color: var(--green2) !important;
 }
 
-input[type="radio"]:checked,
-.radio-label:checked {
+input[type="text"]:focus,
+input[type="text"]:active,
+input[type="email"]:focus,
+input[type="email"]:active,
+input[type="radio"]:focus,
+input[type="radio"]:active,
+textarea:focus,
+textarea:active,
+label:focus {
+  outline-width: 0 !important;
+  box-shadow: none !important;
+  border-color: var(--green2) !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+input[type="checkbox"] {
+  border-radius: 0 !important;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: var(--green2);
+}
+
+input[type="checkbox"]:focus,
+input[type="checkbox"]:active {
+  border-color: var(--green2) !important;
+  outline: 1px solid var(--green2);
+}
+
+input[type="radio"]:checked {
+  /* outline-color: var(--green2) !important; */
+  /* box-shadow: none !important; */
+  background-color: green;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid var(--green2);
+  background-color: white !important;
+  position: relative;
+}
+
+input[type="radio"]:checked::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 10px;
+  background-color: var(--green2);
+}
+
+.selected-label {
+  background-color: var(--green1) !important;
+  border: 1px solid var(--green2) !important;
+}
+
+.radio-label {
+  padding: 8px 12px;
 }

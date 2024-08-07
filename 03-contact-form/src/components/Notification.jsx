@@ -1,8 +1,12 @@
 import icon from "../assets/images/icon-success-check.svg";
 
-export default function Notification() {
+export default function Notification({ onClick }) {
   return (
-    <div className="container bg-notification p-4">
+    <div
+      className="container bg-notification p-4"
+      onClick={onClick}
+      role="alert"
+    >
       <div className="d-flex align-items-center">
         <img
           className="me-2"

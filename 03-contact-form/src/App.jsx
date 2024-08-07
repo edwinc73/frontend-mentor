@@ -10,15 +10,12 @@ export default function App() {
   const [isPresent, safeToRemove] = usePresence();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setSent(false);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, [sent]);
-
-  useEffect(() => {
     !isPresent && setTimeout(safeToRemove, 5000);
   }, [isPresent]);
+
+  const handleClick = () => {
+    setSent(false);
+  };
 
   return (
     <>
@@ -39,11 +36,11 @@ export default function App() {
               transition: { duration: 0.5, ease: easeInOut },
             }}
           >
-            {sent && <Notification></Notification>}
+            {sent && <Notification onClick={handleClick}></Notification>}
           </motion.div>
         </AnimatePresence>
         <div className="container">
-          <div className="row">
+          <div className="row py-5 px-4">
             <ContactUs setSent={setSent}></ContactUs>
           </div>
         </div>
