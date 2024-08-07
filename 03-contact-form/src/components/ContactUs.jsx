@@ -40,7 +40,7 @@ export default function ContactUs({ setSent }) {
 
   return (
     <form
-      className=" bg-white col-12 col-md-6 mx-auto p-4 "
+      className=" bg-white col-md-7 col-12 col-lg-6 mx-auto p-4 "
       onSubmit={handleSubmit}
       style={{
         borderRadius: "12px",
@@ -48,7 +48,7 @@ export default function ContactUs({ setSent }) {
     >
       <h2 className="fw-bold ">Contact Us</h2>
       <div className="row">
-        <div className="col-12 col-md-6 mt-3">
+        <div className="col-12 col-lg-6 mt-3">
           <label className="required" htmlFor="firstName">
             First Name
           </label>
@@ -59,7 +59,7 @@ export default function ContactUs({ setSent }) {
             onChange={formik.handleChange}
             value={formik.values.firstName}
             autoComplete="given-name"
-            className="form-control mt-1"
+            className="form-control mt-2"
           />
           {formik.errors.firstName && formik.touched.firstName ? (
             <div role="alert" className="text-error mt-2">
@@ -67,7 +67,7 @@ export default function ContactUs({ setSent }) {
             </div>
           ) : null}
         </div>
-        <div className="col-12 col-md-6 mt-3">
+        <div className="col-12 col-lg-6 mt-3">
           <label className="required" htmlFor="lastName">
             Last Name
           </label>
@@ -111,7 +111,7 @@ export default function ContactUs({ setSent }) {
           Query Type
         </label>
         <div className="row">
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-lg-6">
             <label
               htmlFor="type1"
               className={`form-check-label ${
@@ -132,13 +132,13 @@ export default function ContactUs({ setSent }) {
               General Enquiry
             </label>
           </div>
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-lg-6">
             <div
               className={`form-check ${
                 formik.values.type == "Support Request"
                   ? "selected-label"
                   : "border"
-              } rounded col-12 p-0 mt-3`}
+              } rounded col-12 p-0 mt-3 mt-lg-2`}
             >
               <label htmlFor="type2" className="form-check-label py-2 px-2">
                 <input
