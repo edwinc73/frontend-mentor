@@ -20,6 +20,14 @@ body {
   src: url(./assets/fonts/Karla-VariableFont_wght.ttf);
 }
 
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 * {
   font-family: karla;
   box-sizing: border-box;
@@ -40,6 +48,10 @@ body {
 .text-green {
   color: var(--green2);
 }
+.bg-notification {
+  background-color: var(--grey2);
+  border-radius: 12px;
+}
 
 body {
   background-color: var(--green1);
@@ -49,8 +61,30 @@ body {
   background-color: var(--green2);
 }
 
-label.form-label:after,
-.agree .form-check-label:after {
+.required:after {
   content: " *";
   color: var(--green2);
+}
+
+main {
+  position: relative;
+}
+small .notification {
+  position: absolute;
+  top: 60px;
+  align-self: center;
+}
+
+.button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+input:hover {
+  border-color: var(--green2);
+}
+
+input[type="radio"]:checked,
+.radio-label:checked {
 }
