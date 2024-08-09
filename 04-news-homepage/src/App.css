@@ -1,0 +1,94 @@
+@font-face {
+  font-family: inter;
+  src: url(/src/assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+:root {
+  --orange: hsl(35, 77%, 62%);
+  --red: hsl(5, 85%, 63%);
+  --off-white: hsl(36, 100%, 99%);
+  --grayish: hsl(233, 8%, 79%);
+  --grey-blue: hsl(236, 13%, 42%);
+  --dark-blue: hsl(240, 100%, 5%);
+}
+
+.text-off-white {
+  color: var(--off-white) !important;
+}
+
+.text-orange {
+  color: var(--orange) !important;
+}
+
+.text-red {
+  color: var(--red) !important;
+}
+
+.bg-blue {
+  background-color: var(--dark-blue) !important;
+}
+
+.text-grey-blue {
+  color: var(--grey-blue) !important;
+}
+
+* {
+  font-family: inter, sans-serif;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 15px;
+}
+
+/* nav styling */
+nav .nav-item {
+  font-size: 15px;
+}
+
+nav a:hover {
+  color: var(--red) !important;
+}
+
+/* menu icon */
+.navbar-toggler {
+  border: none;
+  padding: 5px;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  display: block;
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  z-index: 101;
+}
+
+.side-menu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 100;
+}
+
+.faded-background {
+  height: 100%;
+  background-color: black;
+  width: 200px;
+  opacity: 0.2;
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar-collapse {
+    display: none;
+  }
+}
