@@ -1,0 +1,18 @@
+article.bg-blue {
+  height: min-content;
+}
+
+.news-article:last-child hr {
+  display: none;
+}
+
+hr {
+  color: white;
+  background-color: white;
+  opacity: 0.5;
+}
+
+.news-article:last-child p {
+  padding-bottom: 4px !important;
+  margin: 0;
+}

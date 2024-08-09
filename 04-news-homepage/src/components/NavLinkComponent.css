@@ -1,0 +1,9 @@
+li > .nav-link {
+  color: var(--grey-blue) !important;
+}
+
+@media only screen and (max-width: 992px) {
+  li > .nav-link {
+    color: var(--dark-blue) !important;
+  }
+}

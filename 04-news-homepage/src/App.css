@@ -12,6 +12,10 @@
   --dark-blue: hsl(240, 100%, 5%);
 }
 
+body {
+  background-color: var(--off-white) !important;
+}
+
 .text-off-white {
   color: var(--off-white) !important;
 }
@@ -32,6 +36,10 @@
   color: var(--grey-blue) !important;
 }
 
+.text-color-dark-blue {
+  color: var(--dark-blue) !important;
+}
+
 * {
   font-family: inter, sans-serif;
   box-sizing: border-box;
@@ -41,54 +49,38 @@ p {
   font-size: 15px;
 }
 
-/* nav styling */
-nav .nav-item {
-  font-size: 15px;
+h1 {
+  font-weight: 900;
+  font-size: 2.9rem;
+  line-height: 1.1;
+  letter-spacing: -0.01rem;
 }
 
-nav a:hover {
-  color: var(--red) !important;
+h2 {
+  font-weight: 600;
+  font-size: 2.4rem;
 }
 
-/* menu icon */
-.navbar-toggler {
+h3 {
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  font-weight: 1rem;
+  letter-spacing: -0.02rem;
+  font-weight: 700;
+}
+
+.button-primary {
+  background-color: var(--red);
+  letter-spacing: 0.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
   border: none;
-  padding: 5px;
-}
-
-.bar {
-  width: 30px;
-  height: 3px;
-  background-color: black;
-  display: block;
-}
-
-.burger-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  z-index: 101;
-}
-
-.side-menu {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: white;
-  z-index: 100;
-}
-
-.faded-background {
-  height: 100%;
-  background-color: black;
-  width: 200px;
-  opacity: 0.2;
-}
-
-@media only screen and (max-width: 992px) {
-  .navbar-collapse {
-    display: none;
-  }
+  font-size: 0.925rem;
+  padding: 10px 25px;
 }
