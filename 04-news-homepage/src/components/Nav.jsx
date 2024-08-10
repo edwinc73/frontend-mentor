@@ -30,10 +30,10 @@ export default function Nav({ isOpen, setIsOpen }) {
           setIsOpen((prev) => !prev);
         }}
       >
-        <div className="burger-menu">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
+        <div className={`burger-menu ${isOpen && "close-icon"}`}>
+          <span className="bar menu-bar1"></span>
+          <span className="bar menu-bar2"></span>
+          <span className="bar menu-bar3"></span>
         </div>
       </button>
       {/* side menu navbar */}

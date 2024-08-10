@@ -10,7 +10,11 @@ export const SideMenu = ({ isOpen }) => {
         role="menubar"
         className="stext-color-dark-blue"
         id="side-menu"
-        style={{ paddingTop: "30vh", color: "hsl(240, 100%, 5%)" }}
+        style={{
+          paddingLeft: "15px",
+          paddingTop: "30vh",
+          color: "hsl(240, 100%, 5%)",
+        }}
       >
         {navLink.map(({ link, name, active }) => {
           return (

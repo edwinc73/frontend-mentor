@@ -18,17 +18,48 @@ nav a:hover {
 }
 
 .bar {
+  position: absolute;
   width: 30px;
   height: 3px;
   background-color: black;
   display: block;
+  left: 0;
+  transition: all 0.3s ease;
 }
 
 .burger-menu {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 3px;
   z-index: 101;
+  height: 25px;
+  width: 30px;
+  padding-top: 12px;
+}
+
+.close-icon > .menu-bar1 {
+  transform: translate(0, 0) rotate(45deg);
+}
+.close-icon > .menu-bar2 {
+  opacity: 0;
+  transform: translate(-30px, 0);
+}
+
+.close-icon > .menu-bar3 {
+  transform: translate(0, 0) rotate(-45deg);
+}
+
+.menu-bar1 {
+  transform: translate(0, -8px);
+}
+
+.menu-bar2 {
+  transform: translate(0, 0px);
+  opacity: 1;
+}
+
+.menu-bar3 {
+  transform: translate(0, 8px);
 }
 
 #side-menu {
