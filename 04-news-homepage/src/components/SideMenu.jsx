@@ -2,11 +2,13 @@ import { navLink } from "../navLink";
 import { NavLinkComponent } from "./NavLinkComponent";
 import "./SideMenu.css";
 import "../App.css";
-export const SideMenu = () => {
+export const SideMenu = ({ isOpen }) => {
   return (
     <>
       <ul
-        className="d-flex flex-column text-color-dark-blue"
+        aria-hidden={!isOpen}
+        role="menubar"
+        className="stext-color-dark-blue"
         id="side-menu"
         style={{ paddingTop: "30vh", color: "hsl(240, 100%, 5%)" }}
       >

@@ -1,0 +1,20 @@
+.article-link h5 {
+  color: var(--dark-blue);
+}
+
+.article-link p {
+  color: var(--grey-blue);
+}
+
+.article-link:hover h5 {
+  text-decoration: none;
+  color: var(--red) !important;
+}
+
+.article-link:hover {
+  text-decoration: none;
+}
+
+.article-link h5 {
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}

@@ -18,8 +18,8 @@ export default function Nav({ isOpen, setIsOpen }) {
         />
       </NavLink>
       {/* inline navbar */}
-      {isOpen ? <SideMenu></SideMenu> : null}
-      <InlineNav></InlineNav>
+      {isOpen ? <SideMenu isOpen={isOpen}></SideMenu> : null}
+      <InlineNav isOpen={isOpen}></InlineNav>
       <button
         className="navbar-toggler"
         type="button"

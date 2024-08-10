@@ -4,10 +4,24 @@ import Hero from "./components/Hero";
 import ArticleList from "./components/ArticleList";
 import Footer from "./components/Footer";
 import Overlay from "./components/Overlay";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 922) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>

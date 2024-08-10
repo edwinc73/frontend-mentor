@@ -1,14 +1,19 @@
 import { NavLinkComponent } from "./NavLinkComponent";
 import { navLink } from "../navLink";
 
-export const InlineNav = () => {
+export const InlineNav = ({ isOpen }) => {
   return (
     <div
       className="collapse navbar-collapse"
       id="nav-menu"
-      style={{ marginRight: "-38px" }}
+      style={{ marginRight: "-24px" }}
     >
-      <ul className="navbar-nav ml-auto text-grey-blue">
+      <ul
+        role="menubar"
+        aria-hidden={isOpen}
+        tabIndex="0"
+        className="navbar-nav ml-auto text-grey-blue"
+      >
         {navLink.map(({ link, name, active }) => {
           return (
             <NavLinkComponent

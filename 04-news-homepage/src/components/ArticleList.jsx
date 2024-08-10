@@ -3,7 +3,7 @@ import { articleContent } from "../articleContent";
 
 export default function ArticleList() {
   return (
-    <section id="articleList-section" className="container mt-5">
+    <section id="articleList-section" className="container mt-md-5 mt-4">
       <div className="row">
         {articleContent.map(({ image, number, title, body }) => {
           return (

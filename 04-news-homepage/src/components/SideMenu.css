@@ -3,3 +3,7 @@
   font-size: 1.5rem !important;
   color: var(--dark-blue);
 }
+
+#side-menu > li {
+  padding: 0 !important;
+}

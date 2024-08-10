@@ -16,3 +16,19 @@ hr {
   padding-bottom: 4px !important;
   margin: 0;
 }
+
+.news-article p {
+  line-height: 1.7;
+}
+
+.news-article a {
+  text-decoration: none;
+}
+
+.news-article h4 {
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.news-article:hover h4 {
+  color: var(--orange) !important;
+}

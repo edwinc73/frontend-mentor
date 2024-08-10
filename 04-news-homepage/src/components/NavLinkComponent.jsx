@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./NavLinkComponent.css";
 export const NavLinkComponent = ({ link, name, active }) => {
   return (
-    <li className="nav-item px-3" key={name}>
+    <li className="nav-item px-3" key={name} role="menuitem">
       <NavLink to={link} className="nav-link">
         {name} {active && <span className="sr-only">(current)</span>}
       </NavLink>
