@@ -1,0 +1,74 @@
+nav {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid rgba(182, 188, 200, 0.4);
+
+  ul {
+    display: flex;
+    padding-left: 45px;
+
+    li {
+      padding: 30px 20px;
+      color: $dark-grey-blue;
+
+      position: relative;
+    }
+
+    li::after {
+      content: "";
+      @include transition;
+
+      position: absolute;
+      bottom: -16px;
+      left: 65px;
+      right: 20px;
+      height: 4px;
+      background-color: $orange;
+      opacity: 0;
+    }
+
+    li:hover::after {
+      left: 20px;
+      opacity: 1;
+    }
+  }
+
+  .brand-logo {
+    height: 20px;
+    .brand-logo-link {
+      padding: 10px 0;
+    }
+  }
+
+  .user-center {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    gap: 15px;
+    margin-left: auto;
+
+    button {
+      height: fit-content;
+      border-radius: 100px;
+      width: fit-content;
+      padding: 5px;
+      border: none;
+      background: white;
+      cursor: pointer;
+    }
+
+    .avatar {
+      height: 50px;
+      width: 50px;
+      border-radius: 100px;
+      @include transition;
+      outline: 2px solid white;
+
+      &:hover {
+        outline: 2px solid $orange;
+      }
+    }
+  }
+}
