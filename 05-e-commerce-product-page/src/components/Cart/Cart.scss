@@ -1,0 +1,87 @@
+$margin: 25px;
+#cart-pop-up {
+  z-index: 1000;
+  position: absolute;
+  top: 60px;
+  transform: translateX(-50%);
+  width: 310px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 12px -2px rgba(0, 0, 0, 0.25);
+  padding: $margin;
+
+  .title {
+    margin: 0 -$margin;
+    border-bottom: 1px solid rgba(182, 188, 200, 0.4);
+    display: block;
+    padding: $margin;
+    padding-bottom: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .bold {
+    color: $dark-blue;
+    width: min-content;
+    font-size: 1.125rem;
+  }
+  button.checkout {
+    @include primary-button;
+    height: 52px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  button.delete {
+    @include button-reset;
+  }
+
+  .item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    p {
+      width: fit-content;
+    }
+
+    .img-container img {
+      width: 50px;
+      border-radius: 5px;
+    }
+
+    .img-container {
+      margin-right: 10px;
+    }
+    span.bold {
+      margin-left: 5px;
+    }
+    button {
+      margin-left: auto;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    right: -345px;
+    box-sizing: border-box;
+    width: calc(600px - 30px);
+    top: 80px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    right: -237.5px;
+    top: 68px;
+    width: 345px;
+    min-height: 120px;
+
+    .empty {
+      display: flex;
+      height: max-content;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: fit-content;
+      margin: 0 auto;
+      min-height: 90px;
+    }
+  }
+}

@@ -9,7 +9,6 @@ import { CartProvider } from "./context/cartContext";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
     <>
       <CartProvider>

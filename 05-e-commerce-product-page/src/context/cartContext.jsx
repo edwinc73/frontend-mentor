@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState } from "react";
 import PropTypes from "prop-types";
 
 export const CartContext = createContext(null);
@@ -17,9 +17,7 @@ const reducer = (state, action) => {
         };
       });
     case "removeItem": {
-      return state.filter(
-        (item) => item.productId !== action.payload.productId
-      );
+      return state.filter((item) => item.productId == action.payload.productId);
     }
     default:
       return state;
@@ -28,9 +26,10 @@ const reducer = (state, action) => {
 
 export function CartProvider({ children }) {
   const [cart, dispatch] = useReducer(reducer, []);
+  const [openCart, setOpenCart] = useState(false);
 
   return (
-    <CartContext.Provider value={{ dispatch, cart }}>
+    <CartContext.Provider value={{ dispatch, cart, openCart, setOpenCart }}>
       {children}
     </CartContext.Provider>
   );

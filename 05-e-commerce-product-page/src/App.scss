@@ -33,13 +33,14 @@ p {
 h1 {
   font-size: 3rem;
   line-height: 1;
+  letter-spacing: -0.02rem;
   color: $dark-blue;
   margin: 0;
   padding: 0;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: $dark-blue;
   padding: 0;
   margin: 0;
@@ -50,7 +51,8 @@ p {
   width: 30rem;
   font-size: 16px;
   color: $dark-grey-blue;
-  line-height: 1.5;
+  line-height: 1.6;
+  letter-spacing: -0.01rem;
   margin: 0;
   padding: 0;
 }
@@ -80,5 +82,17 @@ p {
   .container {
     width: 320px;
     margin: 0 auto;
+  }
+
+  .title,
+  h1 {
+    font-size: 2rem;
+  }
+
+  .body-text,
+  p {
+    width: fit-content;
+    font-size: 15px;
+    letter-spacing: -0.01rem;
   }
 }

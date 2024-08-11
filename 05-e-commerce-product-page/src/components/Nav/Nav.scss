@@ -136,6 +136,7 @@ nav {
     }
   }
   @media only screen and (max-width: 992px) {
+    position: relative;
     padding: 16px 0;
     border-bottom: none;
     ul.navlinks-inline {
@@ -143,7 +144,13 @@ nav {
     }
 
     .nav-toggle {
+      position: relative;
       display: block;
+    }
+    ul.navlinks-inline {
+      li {
+        position: unset;
+      }
     }
   }
 

@@ -33,7 +33,7 @@ export default function ProductDescription({
 }) {
   const [quantity, dispatchQuantity] = useReducer(reducer, 1);
   const [error, setError] = useState(null);
-  const { cart, dispatch } = useContext(CartContext);
+  const { cart, dispatch, setOpenCart } = useContext(CartContext);
 
   const handleClick = (e) => {
     const id = e.currentTarget.id;
@@ -73,10 +73,19 @@ export default function ProductDescription({
   const handleSubmit = (e) => {
     e.preventDefault();
     const action = () => {
-      if (cart.find((item) => item.id == id)) {
-        return { type: "updateCart", payload: { id: id, quantity: quantity } };
+      const inCart = cart.find((item) => item.productId == id);
+      dispatchQuantity({ type: "update", payload: 1 });
+      setOpenCart(true);
+      if (inCart) {
+        return {
+          type: "updateCart",
+          payload: { productId: id, quantity: quantity },
+        };
       } else {
-        return { type: "addToCart", payload: { id: id, quantity: quantity } };
+        return {
+          type: "addToCart",
+          payload: { productId: id, quantity: quantity },
+        };
       }
     };
 
@@ -106,8 +115,8 @@ export default function ProductDescription({
       </div>
       <div className="input-container">
         <div className="number-input">
-          <button id="increment" type="button" onClick={handleClick}>
-            <img src={plusIcon} alt="increment quantity icon" />
+          <button id="decrement" type="button" onClick={handleClick}>
+            <img src={minusIcon} alt="decrement quantity icon" />
           </button>
           <input
             className="bold"
@@ -119,8 +128,8 @@ export default function ProductDescription({
             value={quantity}
             onChange={handleClick}
           />
-          <button id="decrement" type="button" onClick={handleClick}>
-            <img src={minusIcon} alt="decrement quantity icon" />
+          <button id="increment" type="button" onClick={handleClick}>
+            <img src={plusIcon} alt="increment quantity icon" />
           </button>
         </div>
         {error && <small className="error-message">{error}</small>}

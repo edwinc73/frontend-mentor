@@ -12,15 +12,9 @@
     filter: brightness(0.5);
   }
 
-  &:hover {
-    .cart-number {
-      opacity: 1;
-    }
-  }
-
   .cart-number {
     @include transition;
-    opacity: 0;
+    opacity: 1;
     position: absolute;
     top: 1px;
     right: -3px;
@@ -32,9 +26,18 @@
     border-radius: 50px;
     width: fit-content;
   }
+
   @media only screen and (max-width: 992px) {
+    position: relative;
     .cart-number {
       opacity: 1;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .cart-number {
+      top: 1px;
+      right: -3px;
     }
   }
 }

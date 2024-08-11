@@ -24,3 +24,18 @@ $light-grey-blue: hsl(223, 64%, 98%);
   width: 50%;
   padding: 90px 60px;
 }
+
+@mixin primary-button {
+  @include button-reset();
+  @include transition;
+  background-color: rgba(255, 125, 26, 1);
+  color: $dark-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+
+  &:hover {
+    background-color: rgba(255, 125, 26, 0.7);
+  }
+}
