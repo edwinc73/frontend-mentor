@@ -1,0 +1,48 @@
+#image-gallery {
+  @include halfScreen;
+  button {
+    @include button-reset;
+  }
+
+  .image-large {
+    img {
+      border-radius: 15px;
+      width: 100%;
+    }
+  }
+
+  .image-previews {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .image-thumbnail {
+    border-radius: 14px;
+    overflow: hidden;
+    height: 95px;
+    width: 95px;
+    box-sizing: border-box;
+
+    &:hover {
+      img {
+        @include transition;
+        opacity: 0.5;
+      }
+    }
+
+    &.active {
+      box-sizing: border-box;
+      outline: 2px solid $orange;
+      img {
+        opacity: 0.5;
+      }
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

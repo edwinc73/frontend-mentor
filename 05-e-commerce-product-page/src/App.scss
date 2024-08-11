@@ -17,12 +17,46 @@ li {
 }
 
 .container {
-  width: 960px;
+  width: 1280px;
   margin: 0 auto;
 }
 
 p {
   font-size: 15px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.title,
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+  color: $dark-blue;
+}
+
+.body-text {
+  width: 30rem;
+  font-size: 16px;
+  color: $dark-grey-blue;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.strike-off {
+  text-decoration-line: line-through;
+}
+
+.small {
+  font-size: 13px;
+}
+
+.title-small {
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+  color: $dark-grey-blue;
 }
 
 @media only screen and (max-width: 992px) {

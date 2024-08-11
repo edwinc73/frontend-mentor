@@ -18,3 +18,9 @@ $light-grey-blue: hsl(223, 64%, 98%);
   cursor: pointer;
   display: block;
 }
+
+@mixin halfScreen {
+  box-sizing: border-box;
+  width: 50%;
+  padding: 90px 60px;
+}

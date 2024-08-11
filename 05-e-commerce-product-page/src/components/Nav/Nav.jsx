@@ -5,18 +5,7 @@ import avatar from "/src/assets/images/image-avatar.png";
 import CartIcon from "../CartIcon/CartIcon";
 import PropTypes from "prop-types";
 import { NavInlineLinks } from "./NavInlineLinks";
-import { NavLinkComponent } from "./NavLinkComponent";
-import { navContent } from "../../navContent";
-
-const NavSideLinks = () => {
-  return (
-    <ul className="navSideLinks" role="menubar">
-      {navContent.map((item) => {
-        return <NavLinkComponent key={item.id} name={item.name} />;
-      })}
-    </ul>
-  );
-};
+import { NavSideLinks } from "./NavSideLinks";
 
 export default function Nav({ isOpen, setIsOpen }) {
   return (

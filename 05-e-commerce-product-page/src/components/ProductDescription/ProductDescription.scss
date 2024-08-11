@@ -1,0 +1,14 @@
+#product-description {
+  @include halfScreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  label {
+    margin-top: 15px;
+  }
+
+  button {
+    @include button-reset;
+  }
+}
