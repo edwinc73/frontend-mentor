@@ -2,10 +2,52 @@ nav {
   font-size: 15px;
   display: flex;
   align-items: center;
-
   border-bottom: 1px solid rgba(182, 188, 200, 0.4);
 
-  ul {
+  .nav-toggle {
+    @include button-reset;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    margin-right: 4px;
+    z-index: 3000;
+    display: none;
+
+    .toggle-bar {
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 16px;
+      height: 3px;
+      background-color: $dark-grey-blue;
+      @include transition;
+    }
+
+    .toggle-bar1 {
+      transform: translate(0, -6px);
+    }
+    .toggle-bar2 {
+      transform: translate(0, 0px);
+      opacity: 1;
+    }
+    .toggle-bar3 {
+      transform: translate(0, 6px);
+    }
+
+    &.close {
+      .toggle-bar1 {
+        transform: rotate(45deg);
+      }
+      .toggle-bar2 {
+        opacity: 0;
+      }
+      .toggle-bar3 {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  ul.navlinks-inline {
     display: flex;
     padding-left: 45px;
 
@@ -35,6 +77,30 @@ nav {
     }
   }
 
+  ul.navSideLinks {
+    position: fixed;
+    left: 0;
+    top: -22px;
+    padding-top: 90px;
+    padding-left: calc((100vw - 600px) / 2);
+    background-color: white;
+    height: 100%;
+    width: 30vw;
+    z-index: 100;
+    font-size: 1.3rem;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    a {
+      color: $dark-blue;
+    }
+    li {
+      z-index: 102;
+    }
+  }
+
   .brand-logo {
     height: 20px;
     .brand-logo-link {
@@ -50,25 +116,46 @@ nav {
     margin-left: auto;
 
     button {
+      @include button-reset;
       height: fit-content;
       border-radius: 100px;
       width: fit-content;
       padding: 5px;
-      border: none;
-      background: white;
-      cursor: pointer;
     }
 
     .avatar {
       height: 50px;
       width: 50px;
       border-radius: 100px;
-      @include transition;
+      transition: outline 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
       outline: 2px solid white;
 
       &:hover {
         outline: 2px solid $orange;
       }
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    padding: 16px 0;
+    border-bottom: none;
+    ul.navlinks-inline {
+      display: none;
+    }
+
+    .nav-toggle {
+      display: block;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .avatar {
+      height: 28px !important;
+      width: 28px !important;
+    }
+
+    ul.navSideLinks {
+      width: 60vw;
+      padding-left: calc((100vw - 320px) / 2);
     }
   }
 }

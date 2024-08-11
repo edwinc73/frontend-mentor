@@ -11,3 +11,10 @@ $light-grey-blue: hsl(223, 64%, 98%);
 @mixin transition {
   transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
+@mixin button-reset {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: block;
+}

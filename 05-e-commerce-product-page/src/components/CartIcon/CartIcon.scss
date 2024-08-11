@@ -27,4 +27,9 @@
     border-radius: 50px;
     width: fit-content;
   }
+  @media only screen and (max-width: 992px) {
+    .cart-number {
+      opacity: 1;
+    }
+  }
 }
