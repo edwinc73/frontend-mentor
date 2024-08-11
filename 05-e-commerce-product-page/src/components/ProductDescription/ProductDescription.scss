@@ -11,4 +11,108 @@
   button {
     @include button-reset;
   }
+
+  .price {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    & > .bold {
+      margin-right: 15px;
+    }
+
+    .discount {
+      background-color: $dark-blue;
+      padding: 3px 10px;
+      border-radius: 5px;
+      color: white;
+    }
+  }
+
+  small.strike-off {
+    color: $dark-grey-blue;
+    font-size: 16px;
+  }
+
+  .body-text {
+    margin-top: 30px;
+  }
+  .input-container {
+    margin-top: 20px;
+    display: flex;
+    height: 52px;
+    position: relative;
+
+    .number-input {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: $light-grey-blue;
+
+      button {
+        padding: 20px 15px;
+        display: flex;
+      }
+      button img {
+        @include transition;
+        pointer-events: none;
+      }
+
+      button:hover img {
+        filter: opacity(0.6);
+      }
+
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+        appearance: textfield;
+        background-color: $light-grey-blue;
+        border: none;
+        width: 45px;
+        height: 30px;
+        display: flex;
+        text-align: center;
+        padding: 0;
+        color: $dark-blue;
+        margin: 0 auto;
+      }
+    }
+
+    button[type="submit"] {
+      @include transition;
+      background-color: rgba(255, 125, 26, 1);
+      color: $dark-blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      margin-left: 15px;
+      height: 100%;
+      padding: 0 96px;
+      font-size: 16px;
+
+      &:hover {
+        background-color: rgba(255, 125, 26, 0.7);
+      }
+
+      img {
+        margin-right: 15px;
+        width: 18px;
+        filter: brightness(0.25);
+      }
+    }
+  }
+
+  .error-message {
+    position: absolute;
+    bottom: -31px;
+    color: red;
+  }
 }

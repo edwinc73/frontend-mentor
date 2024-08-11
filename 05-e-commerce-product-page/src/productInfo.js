@@ -9,6 +9,7 @@ import productThumbnail4 from "/src/assets/images/image-product-4-thumbnail.jpg"
 
 export const productInfo = [
   {
+    id: 1,
     image: [
       {
         imageId: 1,

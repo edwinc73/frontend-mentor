@@ -5,31 +5,35 @@ import Footer from "./components/Footer/Footer";
 import Overlay from "./components/Overlay/Overlay";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { CartProvider } from "./context/cartContext";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
-      <header className="container">
-        <Nav isOpen={isOpen} setIsOpen={setIsOpen}></Nav>
-      </header>
-      <main>
-        <ProductPage></ProductPage>
-      </main>
-      <footer>
-        <Footer></Footer>
-      </footer>
-      <AnimatePresence>
-        {isOpen ? (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <Overlay></Overlay>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+      <CartProvider>
+        <header className="container">
+          <Nav isOpen={isOpen} setIsOpen={setIsOpen}></Nav>
+        </header>
+        <main>
+          <ProductPage></ProductPage>
+        </main>
+        <footer>
+          <Footer></Footer>
+        </footer>
+        <AnimatePresence>
+          {isOpen ? (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <Overlay></Overlay>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
+      </CartProvider>
     </>
   );
 }
