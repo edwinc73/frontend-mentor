@@ -1,5 +1,5 @@
-$margin: 25px;
 #cart-pop-up {
+  $margin: 25px;
   z-index: 1000;
   position: absolute;
   top: 60px;
@@ -11,7 +11,7 @@ $margin: 25px;
   padding: $margin;
 
   .title {
-    margin: 0 -$margin;
+    margin: 0 -25px;
     border-bottom: 1px solid rgba(182, 188, 200, 0.4);
     display: block;
     padding: $margin;
@@ -25,12 +25,14 @@ $margin: 25px;
     width: min-content;
     font-size: 1.125rem;
   }
-  button.checkout {
+  button {
     @include primary-button;
-    height: 52px;
-    border-radius: 10px;
-    width: 100%;
-    margin-top: 20px;
+    .checkout {
+      height: 52px;
+      border-radius: 10px;
+      width: 100%;
+      margin-top: 20px;
+    }
   }
   button.delete {
     @include button-reset;

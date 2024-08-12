@@ -30,9 +30,11 @@
     }
   }
 
-  small.strike-off {
-    color: $dark-grey-blue;
-    font-size: 16px;
+  small {
+    .strike-off {
+      color: $dark-grey-blue;
+      font-size: 16px;
+    }
   }
 
   .body-text {
@@ -85,16 +87,20 @@
       }
     }
 
-    button[type="submit"] {
-      @include primary-button;
-      border-radius: 10px;
-      margin-left: 15px;
-      height: 100%;
-      padding: 0 96px;
-      img {
-        margin-right: 15px;
-        width: 18px;
-        filter: brightness(0.25);
+    button {
+      &[type="submit"] {
+        @include primary-button;
+        & {
+          border-radius: 10px;
+          margin-left: 15px;
+          height: 100%;
+          padding: 0 85px;
+          img {
+            margin-right: 15px;
+            width: 18px;
+            filter: brightness(0.25);
+          }
+        }
       }
     }
   }

@@ -1,0 +1,40 @@
+.image-previews {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .image-thumbnail {
+    border-radius: 14px;
+    overflow: hidden;
+    height: 95px;
+    width: 95px;
+    box-sizing: border-box;
+    background-color: white;
+    &:hover {
+      img {
+        @include transition;
+        @include filterImage;
+      }
+    }
+
+    &.active {
+      box-sizing: border-box;
+      outline: 2px solid $orange;
+      img {
+        @include filterImage;
+      }
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    & {
+      display: none;
+    }
+  }
+}

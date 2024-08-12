@@ -3,12 +3,30 @@ import Nav from "./components/Nav/Nav";
 import ProductPage from "./components/ProductPage/ProductPage";
 import Footer from "./components/Footer/Footer";
 import Overlay from "./components/Overlay/Overlay";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CartProvider } from "./context/cartContext";
+import { LightBoxContext } from "./context/lightBoxContext";
+import { LightBox } from "./components/LightBox/LightBox";
+import { productInfo } from "./productInfo";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const { lightBox, setLightBox, currentImageId, setCurrentImageId } =
+    useContext(LightBoxContext);
+  const { image } = productInfo[0];
+
+  useEffect(() => {
+    const handleResize = (e) => {
+      if (e.target.innerWidth <= 992) setLightBox(false);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <CartProvider>
@@ -22,15 +40,32 @@ function App() {
           <Footer></Footer>
         </footer>
         <AnimatePresence>
-          {isOpen ? (
+          {isOpen || lightBox ? (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <Overlay></Overlay>
+              <Overlay setIsOpen={setIsOpen}></Overlay>
             </motion.div>
           ) : null}
+        </AnimatePresence>
+        <AnimatePresence>
+          {lightBox && (
+            <>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <LightBox
+                  currentImageId={currentImageId}
+                  image={image}
+                  setLightBox={setLightBox}
+                ></LightBox>
+              </motion.div>
+            </>
+          )}
         </AnimatePresence>
       </CartProvider>
     </>
@@ -38,29 +73,3 @@ function App() {
 }
 
 export default App;
-
-// Collections
-// Men
-// Women
-// About
-// Contact
-
-// Sneaker Company
-
-// Fall Limited Edition Sneakers
-
-// These low-profile sneakers are your perfect casual wear companion. Featuring a
-// durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-// $125.00
-// 50%
-// $250.00
-
-// 0
-// Add to cart
-{
-  /* <div class="attribution">
-Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-Coded by <a href="#">Your Name Here</a>.
-</div> */
-}

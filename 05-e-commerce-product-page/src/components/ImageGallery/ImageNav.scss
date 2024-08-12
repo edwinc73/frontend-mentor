@@ -1,0 +1,59 @@
+.image-nav {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  button.prev,
+  button.next {
+    width: 40px;
+    height: 40px;
+    padding-top: 4px;
+    background-color: white !important;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 11px;
+      height: 16px;
+      object-fit: contain;
+    }
+  }
+
+  button.prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    img {
+      margin-left: -2px;
+    }
+  }
+  button.next {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    img {
+      margin-right: -2px;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    & {
+      display: block;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    button.prev {
+      left: -15px !important;
+    }
+    button.next {
+      right: -15px !important;
+    }
+  }
+}
