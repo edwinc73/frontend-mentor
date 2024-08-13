@@ -15,7 +15,7 @@ export const ImageNav = ({ setCurrentImageId, image }) => {
           });
         }}
       >
-        <img role="presentation" src={prevIcon} alt="see-next-image" />
+        <img src={prevIcon} alt="see-next-image" />
       </button>
       <button
         aria-label="next image"
@@ -27,7 +27,7 @@ export const ImageNav = ({ setCurrentImageId, image }) => {
           });
         }}
       >
-        <img role="presentation" src={nextIcon} alt="see-prev-image" />
+        <img src={nextIcon} alt="see-prev-image" />
       </button>
     </div>
   );
