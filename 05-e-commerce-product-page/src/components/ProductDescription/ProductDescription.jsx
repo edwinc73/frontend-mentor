@@ -93,11 +93,11 @@ export default function ProductDescription({
   };
 
   return (
-    <form id="product-description" noValidate onSubmit={handleSubmit}>
+    <div id="product-description" noValidate onSubmit={handleSubmit}>
       <div className="title-small small bold">Sneaker Company</div>
-      <label className="bold title">
+      <div className="bold title">
         <h1>{name}</h1>
-      </label>
+      </div>
       <p className="body-text">{description}</p>
       <div className="price-container">
         <div className="price">
@@ -113,14 +113,21 @@ export default function ProductDescription({
         </div>
         <small className="strike-off bold">${price}.00</small>
       </div>
-      <div className="input-container">
+      <form className="input-container" aria-label="add to cart">
         <div className="number-input">
-          <button id="decrement" type="button" onClick={handleClick}>
+          <button
+            id="decrement"
+            type="button"
+            onClick={handleClick}
+            aria-label="remove 1 item"
+          >
             <img src={minusIcon} alt="decrement quantity icon" />
           </button>
           <input
+            aria-label="Quantity"
             className="bold"
             type="number"
+            autoComplete="off"
             name="quantity"
             id="update"
             max={10}
@@ -128,17 +135,24 @@ export default function ProductDescription({
             value={quantity}
             onChange={handleClick}
           />
-          <button id="increment" type="button" onClick={handleClick}>
+          <button
+            id="increment"
+            type="button"
+            onClick={handleClick}
+            aria-label="add 1 more item"
+          >
             <img src={plusIcon} alt="increment quantity icon" />
           </button>
         </div>
-        {error && <small className="error-message">{error}</small>}
-        <button type="submit" className="bold">
+        <div aria-live="assertive" className="error-message">
+          {error && <small>{error}</small>}
+        </div>
+        <button type="submit" className="bold" aria-label="Add to cart">
           <img src={cartIcon} alt="add to cart icon" />
           Add to cart
         </button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
 

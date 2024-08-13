@@ -28,7 +28,7 @@ export default function Nav({ isOpen, setIsOpen }) {
       {isOpen ? <NavSideLinks /> : <NavInlineLinks />}
       <div className="user-center" role="menubar">
         <CartIcon></CartIcon>
-        <button>
+        <button role="menuitem" aria-label="my profile">
           <img src={avatar} alt="User profile picture" className="avatar" />
         </button>
       </div>

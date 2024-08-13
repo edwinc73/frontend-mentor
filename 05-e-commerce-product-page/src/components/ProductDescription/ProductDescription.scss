@@ -126,6 +126,13 @@
         margin: 25px 0 10px auto;
       }
     }
+
+    .error-message {
+      top: -30px;
+      left: 0;
+      right: 0;
+      bottom: unset;
+    }
     .input-container {
       flex-direction: column;
       height: fit-content;

@@ -12,7 +12,7 @@ export const LightBox = ({ currentImageId, image, setLightBox }) => {
   }, []);
 
   return (
-    <div id="light-box">
+    <div id="light-box" aria-live="polite">
       <ImageLarge
         imageObj={image[lightBoxIndex]}
         setLightBox={setLightBox}
@@ -29,7 +29,7 @@ export const LightBox = ({ currentImageId, image, setLightBox }) => {
           setLightBox(false);
         }}
       >
-        <img src={closeIcon} alt="close light box icon" />
+        <img role="presentation" src={closeIcon} alt="close light box icon" />
       </button>
     </div>
   );

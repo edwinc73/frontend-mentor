@@ -6,6 +6,7 @@ export const ImageNav = ({ setCurrentImageId, image }) => {
   return (
     <div className="image-nav">
       <button
+        aria-label="previous image"
         className="prev"
         onClick={() => {
           setCurrentImageId((prev) => {
@@ -14,9 +15,10 @@ export const ImageNav = ({ setCurrentImageId, image }) => {
           });
         }}
       >
-        <img src={prevIcon} alt="see-next-image" />
+        <img role="presentation" src={prevIcon} alt="see-next-image" />
       </button>
       <button
+        aria-label="next image"
         className="next"
         onClick={() => {
           setCurrentImageId((prev) => {
@@ -25,7 +27,7 @@ export const ImageNav = ({ setCurrentImageId, image }) => {
           });
         }}
       >
-        <img src={nextIcon} alt="see-prev-image" />
+        <img role="presentation" src={nextIcon} alt="see-prev-image" />
       </button>
     </div>
   );

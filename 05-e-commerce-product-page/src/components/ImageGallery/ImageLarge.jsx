@@ -8,6 +8,7 @@ export const ImageLarge = ({ imageObj, setLightBox }) => {
       onClick={() => {
         setLightBox((prev) => !prev);
       }}
+      aria-label="Open image in large"
     >
       <motion.img
         key={imageObj.full}

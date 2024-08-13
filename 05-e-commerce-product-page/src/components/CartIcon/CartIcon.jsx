@@ -13,7 +13,7 @@ export default function CartIcon() {
     cartContext.setOpenCart((prev) => !prev);
   };
   return (
-    <div className="cart">
+    <div className="cart" role="menuitem">
       <button onClick={OpenCart}>
         <img src={cart} alt="open cart" className="cart-icon" />
       </button>

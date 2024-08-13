@@ -6,6 +6,7 @@ export const ImagePreviews = ({ imageObj, image, setCurrentImageId }) => {
       {image.map((img) => {
         return (
           <button
+            aria-label={`preview image ${img.imageId}`}
             key={img.imageId}
             onClick={() => {
               console.log(img);

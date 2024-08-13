@@ -27,11 +27,16 @@
     height: 24px;
     top: -48px;
     right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
       width: inherit;
       height: inherit;
     }
     &:hover {
+      transform: rotate(90deg);
+      background-color: transparent;
       filter: brightness(0) saturate(100%) invert(60%) sepia(52%)
         saturate(3094%) hue-rotate(346deg) brightness(100%) contrast(104%);
     }

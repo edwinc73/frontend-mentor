@@ -36,5 +36,5 @@ export function CartProvider({ children }) {
 }
 
 CartProvider.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.object,
 };

@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 export const NavLinkComponent = ({ name }) => {
   return (
-    <NavLink to="/">
-      <li role="menuitem">{name}</li>
-    </NavLink>
+    <li role="menuitem">
+      <NavLink to="/">{name}</NavLink>
+    </li>
   );
 };
 

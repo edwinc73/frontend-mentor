@@ -39,6 +39,7 @@ export const CartContent = ({ cart }) => {
                   </p>
                 </div>
                 <button
+                  aria-label="remove item"
                   className="delete"
                   onClick={handleClick}
                   data-id={item.productId}

@@ -1,8 +1,10 @@
 #cart-pop-up {
   $margin: 25px;
-  z-index: 1000;
+  z-index: 50;
   position: absolute;
   top: 60px;
+  left: -120px;
+
   transform: translateX(-50%);
   width: 310px;
   background-color: white;
@@ -10,10 +12,33 @@
   box-shadow: 0 10px 12px -2px rgba(0, 0, 0, 0.25);
   padding: $margin;
 
+  .close {
+    @include transition;
+    background-color: transparent;
+
+    width: 16px;
+    height: 16px;
+
+    img {
+      width: inherit;
+      height: inherit;
+    }
+
+    &:hover {
+      background-color: transparent;
+      transform: rotate(90deg);
+      filter: brightness(0) saturate(100%) invert(60%) sepia(52%)
+        saturate(3094%) hue-rotate(346deg) brightness(100%) contrast(104%);
+    }
+  }
+
   .title {
     margin: 0 -25px;
+    margin-top: -25px;
     border-bottom: 1px solid rgba(182, 188, 200, 0.4);
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: $margin;
     padding-bottom: 20px;
     width: 100%;
@@ -27,10 +52,11 @@
   }
   button {
     @include primary-button;
-    .checkout {
+    &.checkout {
       height: 52px;
       border-radius: 10px;
-      width: 100%;
+
+      width: 100% !important;
       margin-top: 20px;
     }
   }
@@ -64,6 +90,7 @@
   }
   @media only screen and (max-width: 992px) {
     right: -345px;
+    left: unset;
     box-sizing: border-box;
     width: calc(600px - 30px);
     top: 80px;
