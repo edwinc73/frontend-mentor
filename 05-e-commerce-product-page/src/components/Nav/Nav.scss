@@ -4,6 +4,10 @@ nav {
   align-items: center;
   border-bottom: 1px solid rgba(182, 188, 200, 0.4);
 
+  a {
+    color: $dark-grey-blue;
+  }
+
   .nav-toggle {
     @include button-reset;
     position: relative;
